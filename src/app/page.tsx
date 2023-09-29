@@ -43,6 +43,7 @@ const NAVIGATION_ITEMS = [
 
 const Home = () => {
   return (
+    // TODO: Make this a layout component
     <div className="w-screen h-screen flex justify-center items-center relative bg-black text-white">
       <div className="max-w-screen-xl w-full h-full flex relative">
         {/* Left Sidebar */}
