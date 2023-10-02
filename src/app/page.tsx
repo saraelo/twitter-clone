@@ -1,88 +1,47 @@
-import Link from 'next/link';
-import { BiHomeCircle, BiUser } from 'react-icons/bi';
-import {
-  BsBell,
-  BsBookmark,
-  BsTwitter,
-  BsEnvelope,
-  BsThreeDots,
-} from 'react-icons/bs';
-import { HiOutlineHashtag } from 'react-icons/hi';
-import { HiEnvelope } from 'react-icons/hi2';
-
-const NAVIGATION_ITEMS = [
-  {
-    title: 'Twitter',
-    icon: BsTwitter,
-  },
-  {
-    title: 'Home',
-    icon: BiHomeCircle,
-  },
-  {
-    title: 'Explore',
-    icon: HiOutlineHashtag,
-  },
-  {
-    title: 'Notifications',
-    icon: BsBell,
-  },
-  {
-    title: 'Messages',
-    icon: BsEnvelope,
-  },
-  {
-    title: 'Bookmarks',
-    icon: BsBookmark,
-  },
-  {
-    title: 'Profile',
-    icon: BiUser,
-  },
-];
-
+import LeftSidebar from '@/components/LeftSidebar';
 const Home = () => {
   return (
-    // TODO: Make this a layout component
     <div className="w-screen h-screen flex justify-center items-center relative bg-black text-white">
       <div className="max-w-screen-xl w-full h-full flex relative">
         {/* Left Sidebar */}
-        <section className="fixed w-[275px] flex flex-col items-stretch h-screen">
-          <div className="flex flex-col items-stretch h-full space-y-4 mt-4">
-            {NAVIGATION_ITEMS.map((item) => (
-              <Link
-                className="hover:bg-white/10 transition duration-200 rounded-3xl flex items-center justify-start w-fit space-x-4 text-2xl px-6 py-2"
-                href="{`/${item.title.toLowercase()}`}"
-                key={item.title}
-              >
-                <div>
-                  <item.icon />
-                </div>
-                <div>{item.title !== 'Twitter' && <div>{item.title}</div>}</div>
-              </Link>
-            ))}
-            <button className="rounded-full m-4 bg-primary p-4 text-2xl text-center hover:bg-opacity-70 transition duration-200">
-              Tweet
-            </button>
-          </div>
-          <div>
-            <button className="w-full rounded-full flex items-center justify-between space-x-2 m-4 bg-transparent p-4 text-center hover:bg-white/10 transition duration-200">
-              <div className="flex items-center space-x-2">
-                <div className="rounded-full bg-slate-400 w-12 h-12"></div>
-                <div className="text-left text-sm">
-                  <div className="font-semibold">Saraelo</div>
-                  <div>@saraelo</div>
-                </div>
-              </div>
-              <div>
-                <BsThreeDots />
-              </div>
-            </button>
-          </div>
-        </section>
+        <LeftSidebar />
 
         {/* Timeline */}
-        {/* <main className="text-white">Home timeline</main> */}
+        <main className="text-white ml-[275px] w-[600px] flex flex-col min-h-screen h-full border-l-[0.5px] border-r-[0.5px] border-gray-600">
+          <h1 className="text-xl font-bold my-4 p-6">Home</h1>
+          <div className="relative flex items-stretch py-4 px-4 space-x-2 border-b-[0.5px] border-t-[0.5px] border-gray-600">
+            <div className="w-10 h-10 bg-slate-400 rounded-full flex-none"></div>
+            <div className="w-full h-full flex flex-col">
+              <input
+                type="text"
+                className="p-4 border-b-[0.5px] border-gray-600 w-full h-full bg-transparent outline-none border-none text-2xl placeholder:text-gray-600"
+                placeholder="What's happening?"
+              />
+
+              <div className="w-full flex justify-between items-center">
+                <div></div>
+                <div className="w-full max-w-[100px]">
+                  <button className="rounded-full w-full px-4 py-4 bg-primary font-bold text-lg text-center hover:bg-opacity-70 transition duration-200">
+                    Tweet
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-color">
+            {Array.from({ length: 5 })
+              .fill(undefined)
+              .map((_, i) => (
+                <div
+                  key={i}
+                  className="border-t-[0.5px] border-b-[0.5px] px-4 flex space-x-4"
+                >
+                  <div>Avatar</div>
+                  <div></div>
+                </div>
+              ))}
+          </div>
+        </main>
 
         {/* Right Sidebar */}
         {/* <section className="text-white">Right sidebar</section> */}
