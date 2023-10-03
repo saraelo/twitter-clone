@@ -19,8 +19,8 @@ This project is a simplified clone of Twitter, intended as a hands-on exploratio
 
 ### Installation Requirements
 
-- Node.js
-- pnpm
+- [Node.js](https://nodejs.org/)
+- [pnpm](https://pnpm.io/)
 
 ### Installation
 
