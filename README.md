@@ -22,8 +22,6 @@ This project is a simplified clone of Twitter, intended as a hands-on exploratio
 - Node.js
 - pnpm
 
-## Getting Started
-
 ### Installation
 
 ```bash
@@ -31,7 +29,7 @@ This project is a simplified clone of Twitter, intended as a hands-on exploratio
 git clone https://github.com/saraelo/twitter-clone.git
 
 # Navigate to the project directory
-cd [Your Project Directory]
+cd twitter-clone
 
 # Install dependencies
 pnpm install
